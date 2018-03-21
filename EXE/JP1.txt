@@ -1,0 +1,105 @@
+Prova 1
+Descripció: Joc de prova que testeja les següents funcionailtats en el següent ordre:
+1. Importar Document, 2. Consultar Documents, 3. Consultar Similitud entre Documents amb el mètode de càlcul de TF-IDFJ.
+La prova consistirà en el següent:
+1.- Importar els documetns que tenen el següent contingut:
+	D1: el río Danubio pasa por Viena, su color es azul
+	D2: el caudal de un río asciende en Invierno
+	D3: el río Rhin y el río Danubio tienen mucho caudal
+	D4: si un río es navegable, es porque tiene mucho caudal
+	Q: cuál es el caudal del río Danubio
+2.- Consultar que els documents realment formen part del sistema
+3.- Consultar la similitud dels documents Q amb tots els demés per veure si realment el càlcul que és mostra a continuació és correcte:
+
+Tenim la següent matriu on els pessos són el nombre d’aparicions de cada paraula:
+
+ 	Río    Danubio    Viena    color    azul    caudal    invierno    Rhin    navegable
+D1  	  1        1            1            1        1            0           	 0        0            0
+D2  	  1        0            0            0        0            1           	 1        0            0
+D3 	   2        1            0            0        0            1          	  0        1            0
+D4 	   1        0            0            0        0            1          	  0        0            1
+
+Càlcul de freqüències inverses:
+
+Idf (río) = Log (4/4) = log (1) = 0
+Idf (Danubio) = Log (4/2) = log 2 = 0.301 Idf (Viena) = Log (4/1) = log 4 = 0.602 Idf (color) = Log (4/1) = log 4 = 0.602
+Idf (azul) = Log (4/1) = log 4 = 0.602
+Idf (caudal) = Log (4/3) = log 1.33 = 0. 124 Idf (invierno) = Log (4/1) = log 4 = 0.602 Idf (Rhin) = Log (4/1) = log 4 = 0.602
+Idf (navegable) = Log (4/1) = log 4 = 0.602
+
+Queda la següent matriu TF-IDF:
+
+	Río    Danubio    Viena    color    azul         Caudal    invierno    Rhin    navegable
+D1   	 0        0.301        0.602    0.602    0.602       0             0            0            0
+D2   	 0        0              0          0           0            0.124        0.602     0            0
+D3   	 0        0.301       0           0           0           0.124        0            0.602      0
+D4   	 0        0              0          0           0           0.124        0            0            0.602
+Q     	0        0.301        0          0           0           0.124        0            0            0
+
+
+
+
+
+
+
+Càlcul de similituds (producte escalar dels vectors):
+
+Sim (D1,Q) = 0*0 + 0.301 *0.301 + 0.602*0 + 0.602*0 + 0.602*0 + 0*0. 124+ 0*0 + 0*0 +0*0 = 0.090601...
+Sim (D2,Q) = 0*0 + 0*0.301 + 0*0 + 0*0 + 0*0 + 0. 124*0. 124 + 0.602*0 + 0*0 + 0*0 = 0.0153376
+Sim (D3,Q) = 0*0 + 0.301 *0.301 + 0*0 + 0*0 + 0*0 + 0. 124*0. 124 + 0*0 + 0.602*0 + 0*0 = 0.105977
+Sim (D4,Q) = 0*0 + 0*0.301 + 0*0 + 0*0 + 0*0 + 0.124*0.124 + 0*0 + 0*0 + 0.602*0 = 0.015337
+
+Aleshores tenim com a resultat de consultar la similtud de Q amb els altres documents del sistema la següent llista ordenada de més similar a menys:
+	D3 (0.105977)
+	D1 (0.090601)
+	D2 (0.015337)
+	D4 (0.015337)
+
+
+Objectius: L’objectiu principal és comprobar el bon funcionament del mètode de càlcul de TF-IDF a part de l’ús de les funcionalitats necessaries per ús d’aquesta funcionalitat principal que es vol testejar.
+
+Entrada:
+	Gestió de dades > Importar Document
+	Títol: D1
+	Autor: nom_autor
+	Navegador de fitxers: EXE/data/Prova1/D1.txt
+	Open
+	Títol: D2
+	Autor: nom_autor
+	Navegador de fitxers: EXE/data/Prova1/D2.txt
+	Open
+	Títol: D3
+	Autor: nom_autor
+	Navegador de fitxers: EXE/data/Prova1/D3.txt
+	Open
+	Títol: D4
+	Autor: nom_autor
+	Navegador de fitxers: EXE/data/Prova1/D4.txt
+	Open
+	Títol: Q
+	Autor: nom_autor
+	Navegador de fitxers: EXE/data/Prova1/Q.txt
+	Open
+	Tanca
+	Cerca > Llistar Documents
+
+
+
+Sortida:
+	D1 – nom_autor
+	D2 – nom_autor
+	D3 – nom_autor
+	D4 – nom_autor
+	Q – nom_autor
+Entrada: 
+	Tanca
+	Cerca > Llistar documents similars
+	Títol: Q
+	Autor: nom_autor
+	Quin mètode de càlcul vols usar? Càlcul amb el mètode TF-IDFJ
+	Quin nombre de documents vols veure? 4
+Sortida:
+	1. D3 – nom_autor : 0.105977
+	2. D1 – nom_autor : 0.090601
+	3. D2 – nom_autor : 0.015337 
+	4. D4 – nom_autor : 0.015337

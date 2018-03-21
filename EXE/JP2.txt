@@ -1,0 +1,59 @@
+Prova 2:
+Descripció: Joc de prova complet que prova les següents funcionailtats en el següent ordre:
+1. Importar Document, 2. Llistar Documents, 3. Consultar Autors per prefix, 4. Guardar Sessió 5. Sortir 6. Obrir Sessió 7. Llistar Documents, 8. Consultar Contingut. 
+
+Entrada:
+	Gestió de dades > Importar Document
+	Títol: L’art de (no) callar
+	Autor: Esther Vera
+	Navegador de fitxers: EXE/data/Prova2/article1.txt
+	Títol: Realitats i percepcions
+	Autor: Carme Colomina
+	Navegador de fitxers: EXE/data/Prova2/article2.txt
+	Títol: A vegades ens en sortim, Sebastià
+	Autor: Carles Capdevila
+	Navegador de fitxers: EXE/data/Prova2/article3.txt
+	Títol: La fi del món
+	Autor: Fernando Trias de Bes
+	Navegador de fitxers: EXE/data/Prova2/article4.txt
+	Títol: Estar segur de saber
+	Autor: Joaquim Coello
+	Navegador de fitxers: EXE/data/Prova2/article5.txt
+	Cerca > Llistar Documents
+Sortida:
+	L'art de (no) callar - Esther Vera 
+Realitats i percepcions - Carme Colomina 
+A vegades ens en sortim, Sebastià - Carles Capdevila 
+La fi del món - Fernando Trias de Bes 
+Estar segur de saber - Joaquim Coello 
+
+Entrada:
+	Cerca > Llistar Autors per prefix
+	Prefix: Car
+	Llistar autors per prefix
+Sortida:
+	Carles Capdevila
+	Carme Colomina
+	
+Entrada:
+	Sessió > Guardar Sessió
+	Navegador de fitxres: EXE/data/Prova2
+	File Name: prova2
+	Sessió > Sortir
+	Obrir el programa de nou
+	Sessió > Obrir Sessió
+	Navegador de fitxres: EXE/data/Prova2/prova2
+	Cerca > Llistar documents
+Sortida:
+	L'art de (no) callar - Esther Vera 
+Realitats i percepcions - Carme Colomina 
+A vegades ens en sortim, Sebastià - Carles Capdevila 
+La fi del món - Fernando Trias de Bes 
+	Estar segur de saber - Joaquim Coello 
+Entrada:
+	Cerca > Consultar Contingut
+	Títol: Realitats i percepcions
+	Autor: Carme Colomina
+	Cercar Contingut
+Sortida:
+	(Contingut del document)

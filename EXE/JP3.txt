@@ -1,0 +1,25 @@
+Prova 3
+Descripció: Joc de prova que serveix per provar la funcionalitat de consulta per expressió booleana.
+La prova consisteix del següent:
+1- Importar els diferents articles que es troben a la carpeta EXE/data/Prova2/
+2- Realitzem la seguent consulta booleana:
+	((silenci & cultura) | ("principis de desembre" & !silenci))
+3- Comprovar que els docuements compleixen la condició a partir del contingut
+
+Importem amb:
+Gestió de dades > Importar document
+Introduim les dades
+Titol: t0
+Autor: a0
+així succesivament...
+
+A continuació fem la consulta amb:
+Cerca > Llistar documents per expressió booleana
+Introduim la següent expressió:
+((cultura) | ("principis de desembre" & !silenci))
+
+Veiem que la sortida és: 
+t0 - a0
+t1 - a1
+
+Que efectivament són els documents que compleixen l'expressió booleana.
