@@ -1,0 +1,22 @@
+2a Entrega Projecte de Programació 19/12/2016
+Estructura del disc:
+
+Directori EXE:
+  Conté els executables .jar del programa i  els jocs de prova.
+  
+  IMPORTANT: El subdirectori data conté els fitxers amb les paraules funcionals que importa el programa al principi de l'execució.
+  Si l'executable .jar del programa no està en el mateix directori que el subdirectori data no s'importaran correctament els fitxers
+  i el programa no disposarà de la funcionalitat d'ignorar les paraules funcionals en la comparació de similituds entre continguts de
+  documents.
+  
+Directori DOCS:
+  Conté la documentació requerida del projecte en format pdf a més dels Javadoc.
+  
+Directori FONTS:
+  Conté els subdirectoris un per integrant del grup amb els codis fonts de les classes implementades per cadascun d'ells.
+  
+Fitxer INDEX.txt
+  Conté la infomació que cal tenir en compte.
+  
+Fitxer C62G22.txt
+  Conté els noms i els mails dels integrants del clúster.
